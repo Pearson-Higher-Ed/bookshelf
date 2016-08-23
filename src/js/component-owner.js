@@ -9,57 +9,111 @@ import {messages} from './defaultMessages';
 
 class ComponentOwner extends React.Component {
 
-  //
-  // Modify or add prop types to validate the properties passed to this component!
-  // This is defined using an ES7 class property (transpiled by Babel Stage 0)
-  //
-  static propTypes = {
-    intl: intlShape.isRequired,
-    data: PropTypes.shape({
-      elementId: PropTypes.string.isRequired,
-      locale: PropTypes.string
-    })
-  };
-
   constructor(props) {
-
     super(props);
-
-    //
-    // FOR DEMO - use state when you need to respond to user input, a server request or the passage of time
-    //
-    this.state = {
-      text: ''
-    };
   }
-
-  //
-  // Note that combining the fat arrow syntax with ES7 class properties (transpiled by Babel Stage 0), we eliminate the
-  // need to do manual binding of the 'this' context in event handlers or callbacks. React binds all other contexts
-  // as expected.
-  //
-  // FOR DEMO and should be removed:
-  _change = () => {
-    this.setState({text: this.props.data.greeting});
-  };
-
-  render() {
-
+  
+  renderEmpty() {
     const {formatMessage} = this.props.intl;
-    //
-    // FOR DEMO and should be refactored for your purposes:
-    //
+    
     return (
-      <div className="pe-inlineblock">
-        <button className="pe-btn pe-btn--primary" onClick={this._change}>{formatMessage(messages.buttonText)}</button>
-        &nbsp;
-        <span className="pe-input">
-          <input type="text" placeholder={formatMessage(messages.placeholder)} value={this.state.text} />
-        </span>
-      </div>
-    )
+      <div className="empty-help" >
+          <div className="empty-message" tabindex="0">
+            <p>{formatMessage(messages.emptyMessage)}</p>                
+          </div>
+      </div>         
+    ) 
   }
 
+  renderBooks() {
+    const that = this;
+      
+    return this.props.books.map(function(book, i) {          
+      return (
+        <Book key={i}
+              id={book.id}
+              author={book.author} 
+              image={book.image} 
+              title={book.title} 
+              description={book.description} 
+              translations={that.props.intl} />        
+      );
+    });   
+  }  
+  
+  render() {
+    const {formatMessage} = this.props.intl;
+    
+    return (
+      <div id="bookshelf" role="main">
+          <div className="bookshelf-header">
+              <h1>{formatMessage(messages.title)}</h1>                    
+          </div>    
+
+          <div className="bookshelf-body">             
+              {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
+          </div>
+          <div id="books-assert-container" role="alert" aria-live="assertive" class="reader-only"></div>
+      </div>           
+    )    
+  }
 }
+
+ComponentOwner.propTypes = {
+  intl: intlShape.isRequired,
+  locale: PropTypes.string,
+  books: PropTypes.array         
+};
+
+class Book extends React.Component {  
+    constructor(props) {
+      super(props);
+      
+      this.handleBookClick = this.handleBookClick.bind(this);      
+      this.handleInfoClick = this.handleInfoClick.bind(this);      
+    }  
+    
+    handleBookClick() {
+      alert(this.props.title + ' book clicked!');
+    }   
+    
+    handleInfoClick() {
+      alert('book info clicked');
+    }
+
+    renderImage(bookCoverExists) {
+      if (bookCoverExists) {
+        return(
+          <img className="image" src={this.props.image} />             
+        )  
+      }    
+      else {
+        return (<span className="image"></span>)  
+      }
+    }
+    
+    render() { 
+      const bookCoverExists = (this.props.image !== '');      
+   
+      return (
+        <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
+            <a href="javascript:void(0);"
+               className="container" 
+               onClick={this.handleBookClick}
+               ui-keypress="{'enter': 'bookCtrl.goToBook(book)'}" 
+               tabindex="0">               
+                {this.renderImage(bookCoverExists)}
+                <p className="title">{this.props.title}</p>               
+            </a>
+            <a className="info"
+               href="javascript:void(0);"
+               onClick={this.handleInfoClick}                 
+               tabindex="0">               
+                <i className="pe-icon--info-circle"></i>               
+            </a>
+        </div>
+      )
+    }
+  }
 
 export default injectIntl(ComponentOwner); // Inject this.props.intl into the component context

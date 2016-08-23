@@ -12,16 +12,25 @@ import ComponentOwner from './src/js/component-owner';
 // i18n, set up for French out-of-the-box
 import {addLocaleData, IntlProvider} from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
+import itLocaleData from 'react-intl/locale-data/it';
+import nlLocaleData from 'react-intl/locale-data/nl';
 import frJson from './translations/fr.json';
+import itJson from './translations/it.json';
+import nlJson from './translations/nl.json';
+
 const translations = {
-  'fr' : frJson
+  'fr' : frJson,
+  'it' : itJson,
+  'nl' : nlJson
 };
 
-export default class MyComponent {
+export default class Bookshelf {
 
   constructor(config) {
 
     addLocaleData(frLocaleData);
+    addLocaleData(itLocaleData);
+    addLocaleData(nlLocaleData);
     this.init(config);
   }
 
@@ -31,7 +40,7 @@ export default class MyComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <ComponentOwner data={config} />
+        <ComponentOwner books={config.books} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );
@@ -42,4 +51,4 @@ export default class MyComponent {
 //
 // For events, use the Origami naming convention of pre-pending with 'o.'
 //
-document.body.addEventListener('o.InitMyComponent', e => new MyComponent(e.detail));
+document.body.addEventListener('o.InitBookshelf', e => new Bookshelf(e.detail));

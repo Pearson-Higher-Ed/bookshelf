@@ -1,4 +1,4 @@
 {
-  "buttonText": "dis bonjour",
-  "placeholder": "espace réservé"
+  "title": "Étagère à livres",
+  "emptyMessage": "Votre bibliothèque est vide."
 }
