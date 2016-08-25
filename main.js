@@ -1,15 +1,10 @@
-//
-// Change all references to 'MyComponent' in this file to your real component name!
-//
-
-// bundled component styling
 import './main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ComponentOwner from './src/js/component-owner';
 
-// i18n, set up for French out-of-the-box
+// i18n
 import {addLocaleData, IntlProvider} from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import itLocaleData from 'react-intl/locale-data/it';
@@ -25,9 +20,7 @@ const translations = {
 };
 
 export default class Bookshelf {
-
   constructor(config) {
-
     addLocaleData(frLocaleData);
     addLocaleData(itLocaleData);
     addLocaleData(nlLocaleData);
@@ -35,7 +28,6 @@ export default class Bookshelf {
   }
 
   init(config) {
-
     const locale = config.locale ? config.locale : 'en';
 
     ReactDOM.render(
@@ -45,10 +37,7 @@ export default class Bookshelf {
       document.getElementById(config.elementId)
     );
   }
-
 }
 
-//
-// For events, use the Origami naming convention of pre-pending with 'o.'
-//
+// Listen for client events to initialize a new Bookshelf component
 document.body.addEventListener('o.InitBookshelf', e => new Bookshelf(e.detail));

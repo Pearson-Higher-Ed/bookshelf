@@ -1,13 +1,14 @@
-////
-/// Custom SCSS for component-specific styling goes here
-////
-#bookshelf {
-  margin: 10px 20px;
-  .bookshelf-header {
-    margin-bottom: 20px;
-  }
+// Demo styling
+
+#bookshelf-demo-title {
+  margin: 10px 0px 20px 20px;
 }
 
+#bookshelf-demo {
+  margin-left: 20px;
+}
+
+// Component-specific styling
 .book {
   display: inline-block;
   width: 220px;

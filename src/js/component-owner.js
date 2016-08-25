@@ -41,15 +41,9 @@ class ComponentOwner extends React.Component {
     });   
   }  
   
-  render() {
-    const {formatMessage} = this.props.intl;
-    
+  render() {    
     return (
       <div id="bookshelf" role="main">
-          <div className="bookshelf-header">
-              <h1>{formatMessage(messages.title)}</h1>                    
-          </div>    
-
           <div className="bookshelf-body">             
               {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
           </div>
@@ -74,7 +68,7 @@ class Book extends React.Component {
     }  
     
     handleBookClick() {
-      alert(this.props.title + ' book clicked!');
+      location.href='index.html';
     }   
     
     handleInfoClick() {
