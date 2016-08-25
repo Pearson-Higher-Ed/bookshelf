@@ -68,7 +68,7 @@ class Book extends React.Component {
     }  
     
     handleBookClick() {
-      location.href='index.html';
+      location.href='book.html';
     }   
     
     handleInfoClick() {
