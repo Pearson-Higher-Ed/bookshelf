@@ -1,4 +1,4 @@
-import Bookshelf from '../main'; // to demo direct API usage
+import Bookshelf from '../main';
 
 function getParameterByName(name, url) {
   if (!url) {
@@ -17,7 +17,7 @@ function getParameterByName(name, url) {
 }
 
 function init() {
-  // Mock data for notes component  
+  // Mock data for bookshelf component  
   const mockData = [{id: 1, author: 'Pete Hunt', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/f8a98cb7-ffea-4d21-8b54-827981fd679e/1/file/DonatelleMH2-080315-MJ-CM/OPS/images/cover.jpg', title: 'Pyschology 101', description: 'Pysch description goes here'},
                     {id: 2, author: 'Dana Harvey', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/74213210-a34d-11e5-8b87-219ee60c0efb/1/file/Blake3-082715-MJ-CM-CSS/OPS/images/cover.jpg', title: 'Structural Analysis', description: 'Structural Analysis description goes here'},
                     {id: 3, author: 'Trent Reznor', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/651da29d-c41d-415e-b8a4-3eafed0057db/1/file/LutgensAtm13-071415-MJ-DW/OPS/images/cover.jpg', title: 'English 101', description: 'English description goes here'},
@@ -29,7 +29,7 @@ function init() {
                         
   const locale = getParameterByName('locale');
   
-  //Create new instance of notes component
+  // Create new instance of bookshelf component
   new Bookshelf({
     elementId: 'bookshelf-demo',    
     locale: locale,

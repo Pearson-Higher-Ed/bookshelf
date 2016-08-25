@@ -1,14 +1,8 @@
-//
-// In React, an owner is the component that sets the props of other components, if desired.
-// See https://facebook.github.io/react/docs/multiple-components.html for composability.
-//
-
 import React, {PropTypes} from 'react';
 import {intlShape, injectIntl} from 'react-intl';
 import {messages} from './defaultMessages';
 
 class ComponentOwner extends React.Component {
-
   constructor(props) {
     super(props);
   }
