@@ -25,9 +25,8 @@
   a.container {
     display: block;    
     height: 100%;
-    &:hover,
-    &:focus {
-      background-color: #EDF8FF;
+    &:hover .image {
+      opacity: 0.7;
     }    
     .image {
       max-width: 170px;
