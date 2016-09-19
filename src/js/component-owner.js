@@ -22,7 +22,7 @@ class ComponentOwner extends React.Component {
   renderBooks() {
     const that = this;
       
-    return this.props.books.map(function(book, i) {          
+    return this.props.store.getState().bookshelf.map(function(book, i) {          
       return (
         <Book key={i}
               id={book.id}
@@ -39,7 +39,7 @@ class ComponentOwner extends React.Component {
     return (
       <div id="bookshelf" role="main">
           <div className="bookshelf-body">             
-              {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
+              {(this.props.store.getState().bookshelf.length === 0) ? this.renderEmpty() : this.renderBooks()}
           </div>
           <div id="books-assert-container" role="alert" aria-live="assertive" class="reader-only"></div>
       </div>           
@@ -50,7 +50,7 @@ class ComponentOwner extends React.Component {
 ComponentOwner.propTypes = {
   intl: intlShape.isRequired,
   locale: PropTypes.string,
-  books: PropTypes.array         
+  store: PropTypes.object    
 };
 
 class Book extends React.Component {  

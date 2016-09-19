@@ -32,7 +32,7 @@ export default class Bookshelf {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <ComponentOwner books={config.books} />
+        <ComponentOwner store={config.store} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );
