@@ -62,7 +62,7 @@ class Book extends React.Component {
     }  
     
     handleBookClick() {
-      location.href='book.html';
+      location.href='book.html?bookId=' + this.props.id;
     }   
     
     handleInfoClick() {
