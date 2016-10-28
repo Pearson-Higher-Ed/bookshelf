@@ -1,17 +1,18 @@
-import './main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ComponentOwner from './src/js/component-owner';
 
 // i18n
-import {addLocaleData, IntlProvider} from 'react-intl';
+import { addLocaleData, IntlProvider } from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import itLocaleData from 'react-intl/locale-data/it';
 import nlLocaleData from 'react-intl/locale-data/nl';
 import frJson from './translations/fr.json';
 import itJson from './translations/it.json';
 import nlJson from './translations/nl.json';
+import './main.scss';
+
+import Bookshelf from './src/js/Bookshelf';
 
 const translations = {
   'fr' : frJson,
@@ -19,7 +20,7 @@ const translations = {
   'nl' : nlJson
 };
 
-export default class Bookshelf {
+export default class BookshelfComponent {
   constructor(config) {
     addLocaleData(frLocaleData);
     addLocaleData(itLocaleData);
@@ -32,12 +33,14 @@ export default class Bookshelf {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <ComponentOwner books={config.books} />
+        <Bookshelf books={config.books} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );
   }
 }
 
+export Bookshelf from './src/js/Bookshelf';
+
 // Listen for client events to initialize a new Bookshelf component
-document.body.addEventListener('o.InitBookshelf', e => new Bookshelf(e.detail));
+document.body.addEventListener('o.InitBookshelf', e => new BookshelfComponent(e.detail));
