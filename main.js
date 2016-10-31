@@ -33,7 +33,7 @@ export default class BookshelfComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <Bookshelf books={config.books} />
+        <Bookshelf books={config.books} onBookClick={config.onBookClick} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

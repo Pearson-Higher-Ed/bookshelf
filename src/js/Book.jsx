@@ -9,7 +9,12 @@ export default class Book extends React.Component {
   }
 
   handleBookClick() {
-    location.href='book.html?bookId=' + this.props.id;
+    if (this.props.onBookClick) {
+      this.props.onBookClick(this.props.id);
+    }
+    else {
+      location.href='book.html?bookId=' + this.props.id;
+    }    
   }
 
   handleInfoClick() {
@@ -35,7 +40,6 @@ export default class Book extends React.Component {
         <a href="javascript:void(0);"
            className="container"
            onClick={this.handleBookClick}
-           ui-keypress="{'enter': 'bookCtrl.goToBook(book)'}"
            tabindex="0">
           {this.renderImage(bookCoverExists)}
           <p className="title">{this.props.title}</p>

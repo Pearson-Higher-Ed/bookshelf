@@ -16,6 +16,10 @@ function getParameterByName(name, url) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+window.onBookClick = function(bookId) {
+  alert('Book has been clicked. Route to book page with bookId = ' + bookId);    
+}
+
 function init() {
   // Mock data for bookshelf component  
   const mockData = [{id: 1, author: 'Pete Hunt', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/f8a98cb7-ffea-4d21-8b54-827981fd679e/1/file/DonatelleMH2-080315-MJ-CM/OPS/images/cover.jpg', title: 'Pyschology 101', description: 'Pysch description goes here'},
@@ -25,15 +29,16 @@ function init() {
                     {id: 5, author: 'Brandy Chastain', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/9557d0fc-0c6e-47be-96a0-71b9208a70eb/1/file/Belk5wPhys-080615-MJ-CM/OPS/images/cover.jpg', title: 'Human Anatomy', description: 'Human Anatomy description goes here'},
                     {id: 6, author: 'Ian McKellan', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/c6453c40-ecda-11e5-9136-03b2eeb2556b/1/file/glossary-sample_standard/OPS/images/cover.jpg', title: 'Nursing Conepts', description: 'Nursing Concepts description goes here'},
                     {id: 7, author: 'Brittany Dorfman', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/32e75b80-bf9a-11e5-929d-db71ada04282/1/file/9780134063737_et2_dcusb_l1/OPS/images/cover.jpg', title: 'Music Theory', description: 'Music Theory description goes here'}, 
-                    {id: 8, author: 'No Name', image: '', title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultrices augue, a interdum diam. Sed dignissim augue sit amet tempor tincidunt.', description: 'Lorem Ipsum description goes here'}];
-                        
+                    {id: 8, author: 'No Name', image: '', title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultrices augue, a interdum diam. Sed dignissim augue sit amet tempor tincidunt.', description: 'Lorem Ipsum description goes here'}];                       
+  
   const locale = getParameterByName('locale');
   
   // Create new instance of bookshelf component
   new Bookshelf({
     elementId: 'bookshelf-demo',    
     locale: locale,
-    books: mockData
+    books: mockData,
+    onBookClick: window.onBookClick    
   });  
 }
 
