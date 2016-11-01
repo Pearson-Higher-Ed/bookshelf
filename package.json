@@ -16,7 +16,7 @@
     "release": "node ./npm_scripts/release.js",
     "verify": "node ./npm_scripts/verify.js"
   },
-  "author": "",
+  "author": "Johnson Nguyen",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -50,9 +50,7 @@
     "mocha": "~2.4.5",
     "node-sass": "~3.4.2",
     "pearson-elements": "^0.10.0",
-    "react": "^15.0.0",
     "react-addons-test-utils": "^15.0.0",
-    "react-dom": "^15.0.0",
     "sass-loader": "~3.2.0",
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",
@@ -60,6 +58,13 @@
     "webpack": "~1.12.9",
     "webpack-dev-server": "~1.14.0"
   },
+  "peerDependencies": {
+    "material-ui": "^0.16.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-tap-event-plugin": "~1.0.0",
+    "react-intl": "~2.1.5"
+  },  
   "keywords": [
     "pearson-components"
   ]

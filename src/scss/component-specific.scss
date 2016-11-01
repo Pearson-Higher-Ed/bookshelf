@@ -65,7 +65,52 @@
     background-position: center;
     background-repeat: no-repeat;    
     min-width: 170px;
+    max-width: 230px;
     background-color: #ececec;
     display: inline-block;
+  }
+}
+
+.modal {
+  font-family: "Open Sans";
+  .image-container {
+    margin: 26px 0px 0px 22px;
+    display: inline-block;
+    vertical-align: top;
+    .image {
+      max-width: 230px;
+      height: 270px;
+      border: solid 1px #c7c7c7;
+    }
+  }
+  .meta-container {   
+    max-width: 350px;
+    margin: 53px 0px 0px 50px;
+    display: inline-block;
+    color: #000;
+    .header {
+      font-size: 11px;
+      color: #767676;
+      letter-spacing: -0.1px;
+    }
+    .body {
+      size: 14px;
+      font-weight: bold;
+      letter-spacing: -0.2px;
+    }
+    .footer {
+      font-size: 12px;
+      letter-spacing: -0.1px;
+      color: #252525;
+    }
+    .course-info {
+      margin-top: 26px;
+    }
+  }
+  .desc-container {
+    margin: 52px 0 37px 22px;
+    color: #252525;
+    font-size: 14px;
+    letter-spacing: -0.2px;
   }
 }

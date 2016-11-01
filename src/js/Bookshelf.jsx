@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { intlShape, injectIntl } from 'react-intl';
 import { messages } from './defaultMessages';
 import Book from './Book';
 
-const renderBooks = (books, onBookClick) => books.map((book, i) => (
-  <Book key={i}
-        id={book.id}
-        author={book.author}
-        image={book.image}
-        title={book.title}
-        description={book.description}
-        onBookClick={onBookClick}
-  />)
-);
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { darkBlack, fullBlack } from 'material-ui/styles/colors';
+import { fade } from 'material-ui/utils/colorManipulator';
 
-class Bookshelf extends React.Component {
+const muiTheme = getMuiTheme({
+  palette: {    
+    textColor: darkBlack,    
+    shadowColor: fullBlack
+  }
+});
+
+class Bookshelf extends React.Component {  
+  renderBooks() {
+    const that = this;
+    
+    return this.props.books.map(function(book, i) {          
+      return (
+        <Book key={i}
+          id={book.id}
+          author={book.author}
+          image={book.image}
+          title={book.title}
+          description={book.description}
+          onBookClick={that.props.onBookClick}
+        />
+      )
+    });
+  };  
+  
   renderEmpty() {
     const { formatMessage } = this.props.intl;
     
@@ -29,12 +47,14 @@ class Bookshelf extends React.Component {
 
   render() {    
     return (
-      <div id="bookshelf" role="main">
-          <div className="bookshelf-body">             
-              {(this.props.books.length === 0) ? this.renderEmpty() : renderBooks(this.props.books, this.props.onBookClick)}
-          </div>
-          <div id="books-assert-container" role="alert" aria-live="assertive" class="reader-only"></div>
-      </div>           
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <div id="bookshelf" role="main">
+            <div className="bookshelf-body">             
+                {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
+            </div>
+            <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only"></div>
+        </div>
+      </MuiThemeProvider>           
     )    
   }
 }

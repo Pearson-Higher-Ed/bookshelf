@@ -1,4 +1,5 @@
 import Bookshelf from '../main';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 function getParameterByName(name, url) {
   if (!url) {
@@ -21,6 +22,10 @@ window.onBookClick = function(bookId) {
 }
 
 function init() {
+  // Needed for onTouchTap
+  // http://stackoverflow.com/a/34015469/988941
+  injectTapEventPlugin();  
+    
   // Mock data for bookshelf component  
   const mockData = [{id: 1, author: 'Pete Hunt', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/f8a98cb7-ffea-4d21-8b54-827981fd679e/1/file/DonatelleMH2-080315-MJ-CM/OPS/images/cover.jpg', title: 'Pyschology 101', description: 'Pysch description goes here'},
                     {id: 2, author: 'Dana Harvey', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/74213210-a34d-11e5-8b87-219ee60c0efb/1/file/Blake3-082715-MJ-CM-CSS/OPS/images/cover.jpg', title: 'Structural Analysis', description: 'Structural Analysis description goes here'},
