@@ -73,7 +73,7 @@ export default class Book extends React.Component {
           className="modal">
           <IconButton
             iconClassName="pe-icon--times" 
-            onTouchTap={this.handleModalClose}
+            onClick={this.handleModalClose}
             tooltipPosition="bottom-left" 
             style={style} />            
           <div className={`image-container ${bookCoverExists ? '' : 'no-book-cover'}`}>
