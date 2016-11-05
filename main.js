@@ -1,8 +1,8 @@
+import './main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// i18n
 import { addLocaleData, IntlProvider } from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import itLocaleData from 'react-intl/locale-data/it';
@@ -10,9 +10,8 @@ import nlLocaleData from 'react-intl/locale-data/nl';
 import frJson from './translations/fr.json';
 import itJson from './translations/it.json';
 import nlJson from './translations/nl.json';
-import './main.scss';
 
-import Bookshelf from './src/js/Bookshelf';
+import ComponentOwner from './src/js/component-owner';
 
 const translations = {
   'fr' : frJson,
@@ -33,7 +32,7 @@ export default class BookshelfComponent {
 
     ReactDOM.render(
       <IntlProvider locale={locale} messages={translations[locale]}>
-        <Bookshelf books={config.books} onBookClick={config.onBookClick} />
+        <ComponentOwner books={config.books} onBookClick={config.onBookClick} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

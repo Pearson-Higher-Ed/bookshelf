@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import IconButton from 'material-ui/IconButton';
 
-export default class Book extends React.Component {
+export default class Book extends Component {
   constructor(props) {
     super(props);
 
