@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
 import IconButton from 'material-ui/IconButton';
+import 'pearson-elements/scss/elements.scss'
 
 export default class Book extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class Book extends Component {
       color: '#8d8d8d',
       position: 'absolute',
       top: '0px',
-      right: '0px',      
+      right: '0px'     
     }
     return (
       <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
