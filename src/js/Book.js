@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
-import IconButton from 'material-ui/IconButton';
 import SvgIcon from 'material-ui/SvgIcon';
 
 export default class Book extends Component {
@@ -86,8 +85,7 @@ export default class Book extends Component {
            tabIndex="0">
           {this.renderImage(bookCoverExists)}
           <p className="title">{this.props.title}</p>
-        </a>
-        
+        </a>        
         <a className="info"
            href="javascript:void(0);"
            onClick={this.handleModalOpen}

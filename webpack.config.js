@@ -13,7 +13,6 @@ module.exports = {
     filename: 'build/[name].bookshelf.js',
     libraryTarget: 'umd'
   },
-  devtool: 'cheap-module-source-map',
   contentBase: './demo', // for webpack dev server
   module: {
     preLoaders: [
@@ -43,6 +42,10 @@ module.exports = {
       { 
         test: /\.(woff|png|jpg|gif)$/, 
         loader: 'url-loader?limit=10000' 
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?mimetype=image/svg+xml'
       }
     ]
   },
