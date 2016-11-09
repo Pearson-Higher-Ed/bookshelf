@@ -1,4 +1,4 @@
-import Bookshelf from '../main';
+import BookshelfComponent from '../main';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 function getParameterByName(name, url) {
@@ -39,7 +39,7 @@ function init() {
   const locale = getParameterByName('locale');
   
   // Create new instance of bookshelf component
-  new Bookshelf({
+  new BookshelfComponent({
     elementId: 'bookshelf-demo',    
     locale: locale,
     books: mockData,
