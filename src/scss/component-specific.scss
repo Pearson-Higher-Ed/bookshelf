@@ -73,8 +73,9 @@
 
 .modal {
   font-family: "Open Sans";
+  font-style: normal;
+  font-stretch: normal;
   .image-container {
-    margin: 26px 0px 0px 22px;
     display: inline-block;
     vertical-align: top;
     .image {
@@ -84,31 +85,38 @@
     }
   }
   .meta-container {   
-    max-width: 350px;
-    margin: 53px 0px 0px 50px;
+    width: 45%;
+    margin: 3.65% 0% 0% 6.9%;
     display: inline-block;
     color: #000;
     .header {
       font-size: 11px;
-      color: #767676;
+      font-weight: 600;
       letter-spacing: -0.1px;
+      color: #767676;
     }
     .body {
-      size: 14px;
-      font-weight: bold;
+      font-size: 14px;
+      font-weight: 600;
       letter-spacing: -0.2px;
+      color: #252525;
     }
     .footer {
       font-size: 12px;
+      font-weight: normal;
       letter-spacing: -0.1px;
       color: #252525;
     }
     .course-info {
-      margin-top: 26px;
+      margin-top: 32px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: -0.1px;
+      color: #767676;
     }
   }
   .desc-container {
-    margin: 52px 0 37px 22px;
+    margin: 52px 0 37px 0px;
     color: #252525;
     font-size: 14px;
     letter-spacing: -0.2px;
