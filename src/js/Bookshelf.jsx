@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Book from './Book';
 import { messages } from './defaultMessages';
-import '../scss/component-specific.scss';
 
 export default class Bookshelf extends Component {  
   constructor (props) {
