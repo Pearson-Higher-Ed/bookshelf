@@ -17,8 +17,9 @@
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.33);
   padding: 0px;
   text-align: center;
-  margin: 0px 20px 25px 0px;
+  margin: 0px 10px 25px 10px;
   position: relative;
+  float:left;
   a {
     text-decoration: none !important;
   }
@@ -31,7 +32,7 @@
     .image {
       max-width: 170px;
       height: 200px;
-      border: solid 1px #c7c7c7;
+      border: solid 1px #eaeaea;
       margin-top: 20px;
     }
     .title {
@@ -89,6 +90,9 @@
     margin: 3.65% 0% 0% 6.9%;
     display: inline-block;
     color: #000;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-stretch: normal; 
     .header {
       font-size: 11px;
       font-weight: 600;
@@ -120,5 +124,8 @@
     color: #252525;
     font-size: 14px;
     letter-spacing: -0.2px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-stretch: normal;
   }
 }
