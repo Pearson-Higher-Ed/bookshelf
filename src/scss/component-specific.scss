@@ -9,6 +9,12 @@
 }
 
 // Component-specific styling
+.bookshelf-body:after { 
+  content: " ";
+  display: block; 
+  height: 0; 
+  clear: both;
+}
 .book {
   display: inline-block;
   width: 220px;

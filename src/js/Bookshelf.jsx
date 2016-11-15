@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Book from './Book';
-import { messages } from './defaultMessages';
 
 export default class Bookshelf extends Component {  
   constructor (props) {
@@ -24,13 +23,11 @@ export default class Bookshelf extends Component {
     });
   };  
   
-  renderEmpty() {
-    const { formatMessage } = this.props.intl;
-    
+  renderEmpty() {    
     return (
       <div className="empty-help" >
           <div className="empty-message" tabindex="0">
-            <p>{formatMessage(messages.emptyMessage)}</p>                
+            <p>Your bookshelf is empty.</p>                
           </div>
       </div>         
     ) 
