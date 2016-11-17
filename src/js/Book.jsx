@@ -53,12 +53,7 @@ export default class Book extends Component {
         }
       } 
     }
-    const MoreinfoIcon = (props) => (
-      <img {...props} src={'.././img/ic-info.svg'} alt="more info" className="moreInfoIcon" />
-    )
-    const CancelIcon = (props) => (
-      <img {...props} src={'.././img/ic-cancel.svg'} alt="cancel" className="cancelBtn" />
-    )
+    
     return (
       <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
         <a href="javascript:void(0);"
@@ -72,7 +67,6 @@ export default class Book extends Component {
            href="javascript:void(0);"
            onClick={this.handleModalOpen}
            tabIndex="0">
-          <MoreinfoIcon />
         </a>
         <Dialog
           modal={false}
@@ -81,7 +75,7 @@ export default class Book extends Component {
           className="modal"
           contentStyle={style.modal}
           bodyStyle= {style.modal.bodyStyle}>
-          <CancelIcon onClick={this.handleModalClose} />
+          <div className="cancelBtn" onClick={this.handleModalClose} ></div>
           <div className={`image-container ${bookCoverExists ? '' : 'no-book-cover'}`}>
             {this.renderImage(bookCoverExists)}
           </div>

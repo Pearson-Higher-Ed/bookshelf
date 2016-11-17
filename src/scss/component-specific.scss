@@ -57,6 +57,12 @@
     position: absolute;
     bottom: 56px;
     right: 16px;
+    background-image: url(./img/ic-info.svg);
+    background-size: 18px 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:18px;
+    height:18px;
     i {
       font-size: 18px;
       object-fit: contain;
@@ -89,7 +95,12 @@
     height: 18.7px;
     width: 18px;
     cursor: pointer;
+    background-image: url(./img/ic-cancel.svg);
+    background-size: 18px 18.7px;
+    background-position: center;
+    background-repeat: no-repeat;
   }
+  
   .image-container {
     display: inline-block;
     vertical-align: top;
