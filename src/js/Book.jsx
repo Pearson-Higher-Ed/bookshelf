@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
-import SvgIcon from 'material-ui/SvgIcon';
 
 export default class Book extends Component {
   constructor(props) {
