@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Dimensions from 'react-dimensions'
 import Book from './Book';
 import floor from 'lodash/floor'
+import Dimensions from 'react-dimensions'
 
 class Bookshelf extends Component {  
   constructor (props) {
@@ -10,8 +10,9 @@ class Bookshelf extends Component {
       reqMargin: 0
     } 
   }
-  componentWillMount() {
+  componentDidMount() {
     const componentWidth = this.props.containerWidth;
+    console.log(componentWidth);
     const bookWidth = 220;
     const booksPerRow = floor(componentWidth / bookWidth);
     const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
@@ -58,4 +59,4 @@ class Bookshelf extends Component {
   }
 }
 
-export default Dimensions()(Bookshelf)
+export default Dimensions()(Bookshelf);
