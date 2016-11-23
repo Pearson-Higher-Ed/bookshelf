@@ -10,13 +10,11 @@ class Bookshelf extends Component {
       reqMargin: 0
     } 
   }
-  componentDidMount() {
+  componentWillMount() {
     const componentWidth = this.props.containerWidth;
     const bookWidth = 220;
     const booksPerRow = floor(componentWidth / bookWidth);
-    console.log('booksPerRow: '+booksPerRow);
     const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
-    console.log('margin: '+margin);
     this.setState({
       reqMargin: margin
     })
@@ -43,9 +41,7 @@ class Bookshelf extends Component {
   renderEmpty() {    
     return (
       <div className="empty-help" >
-          <div className="empty-message" tabindex="0">
-            <p>Your bookshelf is empty.</p>                
-          </div>
+        <div className="empty-message" tabIndex="0" />
       </div>         
     ) 
   }
