@@ -12,7 +12,6 @@ class Bookshelf extends Component {
   }
   componentDidMount() {
     const componentWidth = this.props.containerWidth;
-    console.log(componentWidth);
     const bookWidth = 220;
     const booksPerRow = floor(componentWidth / bookWidth);
     const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
@@ -49,7 +48,7 @@ class Bookshelf extends Component {
 
   render() {    
     return (
-      <div id="bookshelf" role="main" width={this.props.containerWidth}>
+      <div id="bookshelf" role="main">
           <div className="bookshelf-body">             
               {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
           </div>

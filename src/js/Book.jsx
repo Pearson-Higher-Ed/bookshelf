@@ -61,7 +61,7 @@ export default class Book extends Component {
     return (
       <div style= {style.bookMargin} className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
         <a href="javascript:void(0);"
-           className="container"
+           className="bookContainer"
            onClick={this.handleBookClick}
            tabIndex="0">
           {this.renderImage(bookCoverExists)}
