@@ -51,15 +51,11 @@ export default class Book extends Component {
         bodyStyle: {
           padding:'5.9% 6.4%'
         }
-      },
-      bookMargin: {
-        marginLeft: this.props.reqMargin,
-        marginRight: this.props.reqMargin
-      } 
+      }
     }
     
     return (
-      <div style= {style.bookMargin} className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
+      <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
         <a href="javascript:void(0);"
            className="bookContainer"
            onClick={this.handleBookClick}

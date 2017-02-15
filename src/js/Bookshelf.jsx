@@ -7,7 +7,8 @@ class Bookshelf extends Component {
   constructor (props) {
     super(props); 
     this.state = {
-      reqMargin: 0
+      //reqMargin: 0,
+      checkRows:''
     } 
   }
   componentDidMount() {
@@ -17,7 +18,7 @@ class Bookshelf extends Component {
     const checkRows = this.props.books.length >= booksPerRow ? true : false;
     const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
     this.setState({
-      reqMargin: margin,
+      //reqMargin: margin,
       checkRows: checkRows
     })
   }
@@ -34,7 +35,7 @@ class Bookshelf extends Component {
           title={book.title}
           description={book.description}
           onBookClick={that.props.onBookClick}
-          reqMargin ={that.state.reqMargin}
+          //reqMargin ={that.state.reqMargin}
         />
       )
     });
