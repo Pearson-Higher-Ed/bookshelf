@@ -14,9 +14,11 @@ class Bookshelf extends Component {
     const componentWidth = this.props.containerWidth;
     const bookWidth = 220;
     const booksPerRow = floor(componentWidth / bookWidth);
+    const checkRows = this.props.books.length >= booksPerRow ? true : false;
     const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
     this.setState({
-      reqMargin: margin
+      reqMargin: margin,
+      checkRows: checkRows
     })
   }
 
@@ -46,11 +48,17 @@ class Bookshelf extends Component {
     ) 
   }
 
-  render() {    
+  render() {
+    let txtAlign;
+    if(this.state.checkRows) {
+      txtAlign ='left';
+    }else {
+      txtAlign ='center';
+    }
     return (
       <div id="bookshelf" role="main">
-          <div className="bookshelf-body">             
-              {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
+          <div className="bookshelf-body" style={{textAlign:txtAlign}}>
+            {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
           </div>
           <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only"></div>
       </div>          
