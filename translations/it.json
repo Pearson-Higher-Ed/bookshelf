@@ -1,4 +1,8 @@
 {
   "title": "Libreria",
-  "emptyMessage": "Il tuo scaffale è vuoto."
+  "emptyMessage": "Il tuo scaffale è vuoto.",
+  "moreInfo": "Ulteriori informazioni",
+  "moreInfoCloseIcon": "Ulteriori informazioni Chiudi Icona",
+  "publicationInfo": "Informazioni di pubblicazione",
+  "courseInfo": "Informazioni sul corso"
 }

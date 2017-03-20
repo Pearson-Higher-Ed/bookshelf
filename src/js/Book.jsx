@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
+import { messages } from './defaultMessages';
 
 export default class Book extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class Book extends Component {
   }
 
   render() {
+    const { formatMessage } = this.props.intl;
     const bookCoverExists = (this.props.image !== '');
     const style = {
       modal:{
@@ -66,7 +68,8 @@ export default class Book extends Component {
         <a className="info"
            href="javascript:void(0);"
            onClick={this.handleModalOpen}
-           tabIndex="0">
+           tabIndex="0"
+           aria-label={formatMessage(messages.moreInfo)}>
         </a>
         <Dialog
           modal={false}
@@ -75,15 +78,15 @@ export default class Book extends Component {
           className="modal"
           contentStyle={style.modal}
           bodyStyle= {style.modal.bodyStyle}>
-          <div className="cancelBtn" onClick={this.handleModalClose} ></div>
+          <div className="cancelBtn" onClick={this.handleModalClose} aria-label={formatMessage(messages.moreInfoCloseIcon)}></div>
           <div className={`image-container ${bookCoverExists ? '' : 'no-book-cover'}`}>
             {this.renderImage(bookCoverExists)}
           </div>
           <div className="meta-container">
-            <p className="header">PUBLICATION INFO</p>
+            <p className="header" aria-label={formatMessage(messages.publicationInfo)}>PUBLICATION INFO</p>
             <p className="body">{this.props.title}</p>
             <p className="footer">{this.props.author}</p>
-            <p className="header course-info">COURSE INFO</p>
+            <p className="header course-info" aria-label={formatMessage(messages.courseInfo)}>COURSE INFO</p>
             <p className="body">Course Name</p>
             <p className="footer">CourseId123</p>
           </div>

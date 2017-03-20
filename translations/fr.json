@@ -1,4 +1,8 @@
 {
   "title": "Étagère à livres",
-  "emptyMessage": "Votre bibliothèque est vide."
+  "emptyMessage": "Votre bibliothèque est vide.",
+  "moreInfo": "Plus d'informations",
+  "moreInfoCloseIcon": "Plus d'info Fermer Icône",
+  "publicationInfo": "Informations sur la publication",
+  "courseInfo": "Informations sur le cours"
 }

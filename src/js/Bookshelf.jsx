@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { intlShape, injectIntl } from 'react-intl';
 import Book from './Book';
 import floor from 'lodash/floor'
 import Dimensions from 'react-dimensions'
@@ -29,6 +30,7 @@ class Bookshelf extends Component {
     return this.props.books.map(function(book, i) {          
       return (
         <Book key={i}
+          intl={that.props.intl}
           id={book.id}
           author={book.author}
           image={book.image}
@@ -67,4 +69,8 @@ class Bookshelf extends Component {
   }
 }
 
-export default Dimensions()(Bookshelf);
+Bookshelf.propTypes = {
+  intl: intlShape.isRequired
+};
+
+export default Dimensions()(injectIntl(Bookshelf));

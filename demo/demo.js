@@ -1,24 +1,40 @@
 import BookshelfComponent from '../main';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { addLocaleData } from 'react-intl';
+import enLocaleData from 'react-intl/locale-data/en';
+import frLocaleData from 'react-intl/locale-data/fr';
+import tsLocaleData from 'react-intl/locale-data/ts';
 
-function getParameterByName(name, url) {
-  if (!url) {
-    url = window.location.href;
-  }
-  name = name.replace(/[\[\]]/g, '\\$&');
-  const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-  const results = regex.exec(url);
-  if (!results) {
-    return null;
-  }
-  if (!results[2]) {
-    return '';
-  }
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+
+// function getParameterByName(name, url) {
+//   if (!url) {
+//     url = window.location.href;
+//   }
+//   name = name.replace(/[\[\]]/g, '\\$&');
+//   const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+//   const results = regex.exec(url);
+//   if (!results) {
+//     return null;
+//   }
+//   if (!results[2]) {
+//     return '';
+//   }
+//   return decodeURIComponent(results[2].replace(/\+/g, ' '));
+// }
 
 window.onBookClick = function(bookId) {
   alert('Book has been clicked. Route to book page with bookId = ' + bookId);    
+}
+
+const localeData = {
+  en: enLocaleData,
+  fr: frLocaleData,
+  ts: tsLocaleData
+};
+
+function getParam(item) {
+  const svalue = location.search.match(new RegExp('[\?\&]' + item + '=([^\&]*)(\&?)', 'i'));
+  return svalue ? svalue[1] : svalue;
 }
 
 function init() {
@@ -36,12 +52,13 @@ function init() {
                     {id: 7, author: 'Brittany Dorfman', image: 'http://content.stg-openclass.com/eps/pearson-reader/api/item/32e75b80-bf9a-11e5-929d-db71ada04282/1/file/9780134063737_et2_dcusb_l1/OPS/images/cover.jpg', title: 'Music Theory', description: 'Music Theory description goes here'}, 
                     {id: 8, author: 'No Name', image: '', title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultrices augue, a interdum diam. Sed dignissim augue sit amet tempor tincidunt.', description: 'Lorem Ipsum description goes here'}];                       
   
-  const locale = getParameterByName('locale');
+  const region = getParam('lang') || 'en';
+  addLocaleData(localeData[region]);
   
   // Create new instance of bookshelf component
   new BookshelfComponent({
     elementId: 'bookshelf-demo',    
-    locale: locale,
+    locale: region,
     books: mockData,
     onBookClick: window.onBookClick    
   });  

@@ -2,24 +2,14 @@ import './main.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { addLocaleData, IntlProvider } from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import itLocaleData from 'react-intl/locale-data/it';
 import nlLocaleData from 'react-intl/locale-data/nl';
-import frJson from './translations/fr.json';
-import itJson from './translations/it.json';
-import nlJson from './translations/nl.json';
-
 import ComponentOwner from './src/js/component-owner';
+import InternationalSupport from './src/js/InternationalSupport';
 
-const translations = {
-  'fr' : frJson,
-  'it' : itJson,
-  'nl' : nlJson
-};
-
-export default class BookshelfComponent {
+export default class BookshelfDemo {
   constructor(config) {
     addLocaleData(frLocaleData);
     addLocaleData(itLocaleData);
@@ -28,10 +18,11 @@ export default class BookshelfComponent {
   }
 
   init(config) {
-    const locale = config.locale ? config.locale : 'en';
+    //const locale = config.locale ? config.locale : 'en';
+    this.intlObj = new InternationalSupport(config.locale);
 
     ReactDOM.render(
-      <IntlProvider locale={locale} messages={translations[locale]}>
+      <IntlProvider locale={this.intlObj.getLocale()} messages={this.intlObj.getMessages()}>
         <ComponentOwner books={config.books} onBookClick={config.onBookClick} />
       </IntlProvider>,
       document.getElementById(config.elementId)
@@ -39,7 +30,7 @@ export default class BookshelfComponent {
   }
 }
 
-export Bookshelf from './src/js/Bookshelf';
+export { BookshelfComponent } from './src/js/BookshelfComponent';
 
 // Listen for client events to initialize a new Bookshelf component
-document.body.addEventListener('o.InitBookshelf', e => new BookshelfComponent(e.detail));
+document.body.addEventListener('o.InitBookshelf', e => new BookshelfDemo(e.detail));
