@@ -83,10 +83,10 @@ export default class Book extends Component {
             {this.renderImage(bookCoverExists)}
           </div>
           <div className="meta-container">
-            <p className="header" aria-label={formatMessage(messages.publicationInfo)}>PUBLICATION INFO</p>
+            <p className="header">{formatMessage(messages.publicationInfo)}</p>
             <p className="body">{this.props.title}</p>
             <p className="footer">{this.props.author}</p>
-            <p className="header course-info" aria-label={formatMessage(messages.courseInfo)}>COURSE INFO</p>
+            <p className="header course-info">{formatMessage(messages.courseInfo)}</p>
             <p className="body">Course Name</p>
             <p className="footer">CourseId123</p>
           </div>
