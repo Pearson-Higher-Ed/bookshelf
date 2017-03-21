@@ -36,7 +36,13 @@ class Bookshelf extends Component {
           image={book.image}
           title={book.title}
           description={book.description}
+          updfUrl={book.updfUrl}   
+          bookeditionid={book.bookeditionid}    
+          iseT1={book.iseT1}    
+          globalBookId={book.globalBookId}
           onBookClick={that.props.onBookClick}
+          storeUPdfUrl={that.props.storeUPdfUrl}
+          storeBookDetails={that.props.storeBookDetails}
           //reqMargin ={that.state.reqMargin}
         />
       )
