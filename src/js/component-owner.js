@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { darkBlack, fullBlack } from 'material-ui/styles/colors';
 
-import Bookshelf from './Bookshelf';
+import BookshelfComponent from './BookshelfComponent';
 
 const muiTheme = getMuiTheme({
   palette: {    
@@ -28,9 +28,10 @@ class ComponentOwner extends React.Component {
   render() {    
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <Bookshelf
+        <BookshelfComponent
           books={this.props.books}
-          onBookClick={this.props.onBookClick} />
+          onBookClick={this.props.onBookClick}
+          locale={this.props.locale} />
       </MuiThemeProvider>
     )
   }

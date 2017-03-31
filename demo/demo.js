@@ -53,7 +53,7 @@ function init() {
                     {id: 8, author: 'No Name', image: '', title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultrices augue, a interdum diam. Sed dignissim augue sit amet tempor tincidunt.', description: 'Lorem Ipsum description goes here'}];                       
   
   const region = getParam('lang') || 'en';
-  addLocaleData(localeData[region]);
+  addLocaleData(localeData[region.split('-')[0]]);
   
   // Create new instance of bookshelf component
   new BookshelfComponent({

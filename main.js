@@ -6,8 +6,9 @@ import { addLocaleData, IntlProvider } from 'react-intl';
 import frLocaleData from 'react-intl/locale-data/fr';
 import itLocaleData from 'react-intl/locale-data/it';
 import nlLocaleData from 'react-intl/locale-data/nl';
+import { InternationalSupport } from '@pearson-incubator/aquila-js-core';
 import ComponentOwner from './src/js/component-owner';
-import InternationalSupport from './src/js/InternationalSupport';
+import msgObject from './translations';
 
 export default class BookshelfDemo {
   constructor(config) {
@@ -19,7 +20,7 @@ export default class BookshelfDemo {
 
   init(config) {
     //const locale = config.locale ? config.locale : 'en';
-    this.intlObj = new InternationalSupport(config.locale);
+    this.intlObj = new InternationalSupport(msgObject, config.locale);
 
     ReactDOM.render(
       <IntlProvider locale={this.intlObj.getLocale()} messages={this.intlObj.getMessages()}>
