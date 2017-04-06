@@ -11,7 +11,6 @@ export const BookshelfComponent = function ViewerComponent(paramsObj) { // eslin
     <Bookshelf
     	books={paramsObj.books}
       onBookClick={paramsObj.onBookClick}
-      storeUPdfUrl={paramsObj.storeUPdfUrl}		
       storeBookDetails={paramsObj.storeBookDetails}
     />
   </IntlProvider>);

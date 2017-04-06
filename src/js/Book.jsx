@@ -17,10 +17,9 @@ export default class Book extends Component {
 
   handleBookClick() {
     if (this.props.onBookClick) {
-      if(this.props.iseT1){   
-        this.props.onBookClick(this.props.id,this.props.iseT1);   
-        this.props.storeUPdfUrl(this.props.updfUrl);    
-        this.props.storeBookDetails(this.props.author,this.props.image,this.props.title,this.props.globalBookId,this.props.bookeditionid);    
+      if(this.props.book.iseT1){
+        this.props.onBookClick(this.props.id,this.props.book.iseT1);   
+        this.props.storeBookDetails(this.props.book);    
       }else{    
         this.props.onBookClick(this.props.id);    
       }
