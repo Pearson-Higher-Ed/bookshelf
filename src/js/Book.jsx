@@ -17,10 +17,10 @@ export default class Book extends Component {
 
   handleBookClick() {
     if (this.props.onBookClick) {
-      if(this.props.book.iseT1){
-        this.props.onBookClick(this.props.id,this.props.book.iseT1);   
+      if (this.props.book.iseT1) {
+        this.props.onBookClick(this.props.id, this.props.book.iseT1);
         this.props.storeBookDetails(this.props.book);    
-      }else{    
+      } else {
         this.props.onBookClick(this.props.id);    
       }
     }
@@ -59,7 +59,7 @@ export default class Book extends Component {
           padding:'5.9% 6.4%'
         }
       }
-    }
+    };
     
     return (
       <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>

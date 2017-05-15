@@ -26,8 +26,9 @@
     "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
-    "react-intl": "~2.0.1",
-    "@pearson-incubator/aquila-js-core": "^0.2.32"
+    "@pearson-incubator/aquila-js-core": "^0.2.32",
+    "prop-types": "^15.5.10",
+    "react-intl": "^2.3.0"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.1.0",
@@ -42,6 +43,7 @@
     "colors": "~1.1.2",
     "conventional-changelog": "~1.1.0",
     "css-loader": "~0.23.0",
+    "element-resize-event": "^2.0.5",
     "eslint": "~1.10.3",
     "eslint-loader": "~1.1.1",
     "eslint-plugin-react": "~3.16.1",
@@ -52,9 +54,9 @@
     "jsdom": "~8.5.0",
     "json-loader": "~0.5.4",
     "lodash": "^4.17.2",
-    "material-ui": "^0.16.3",
+    "material-ui": "^0.16.7",
     "mocha": "~2.4.5",
-    "node-sass": "~3.4.2",
+    "node-sass": "^4.5.2",
     "pearson-elements": "^0.10.0",
     "pseudoloc": "^1.1.0",
     "react": "^15.4.0",
@@ -62,19 +64,19 @@
     "react-dimensions": "^1.3.0",
     "react-dom": "^15.4.0",
     "react-tap-event-plugin": "~2.0.1",
-    "sass-loader": "~3.2.0",
+    "sass-loader": "^4.1.1",
     "semver": "~5.1.0",
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.7",
-    "webpack": "~1.12.9",
+    "webpack": "^1.15.0",
     "webpack-dev-server": "~1.14.0"
   },
   "peerDependencies": {
-    "material-ui": "^0.16.3",
+    "material-ui": "^0.16.7",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-tap-event-plugin": "~2.0.1",
-    "react-intl": "~2.1.5"
+    "react-intl": "^2.3.0"
   },
   "keywords": [
     "pearson-components"
