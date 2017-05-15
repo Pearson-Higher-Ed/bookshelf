@@ -1,11 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { darkBlack, fullBlack } from 'material-ui/styles/colors';
 
-import BookshelfComponent from './BookshelfComponent';
+import { BookshelfComponent } from './BookshelfComponent';
 
 const muiTheme = getMuiTheme({
   palette: {    
@@ -25,7 +26,7 @@ class ComponentOwner extends React.Component {
     };
   }
 
-  render() {    
+  render() {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <BookshelfComponent

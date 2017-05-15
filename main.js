@@ -24,7 +24,7 @@ export default class BookshelfDemo {
 
     ReactDOM.render(
       <IntlProvider locale={this.intlObj.getLocale()} messages={this.intlObj.getMessages()}>
-        <ComponentOwner books={config.books} onBookClick={config.onBookClick} />
+        <ComponentOwner books={config.books} onBookClick={config.onBookClick} locale={config.locale} />
       </IntlProvider>,
       document.getElementById(config.elementId)
     );

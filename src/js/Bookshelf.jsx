@@ -16,8 +16,7 @@ class Bookshelf extends Component {
     const componentWidth = this.props.containerWidth;
     const bookWidth = 220;
     const booksPerRow = floor(componentWidth / bookWidth);
-    const checkRows = this.props.books.length >= booksPerRow ? true : false;
-    const margin = ((componentWidth - (bookWidth * booksPerRow) - 13) / booksPerRow) / 2;
+    const checkRows = this.props.books.length >= booksPerRow;
     this.setState({
       //reqMargin: margin,
       checkRows: checkRows
@@ -55,9 +54,9 @@ class Bookshelf extends Component {
 
   render() {
     let txtAlign;
-    if(this.state.checkRows) {
+    if (this.state.checkRows) {
       txtAlign ='left';
-    }else {
+    } else {
       txtAlign ='center';
     }
     return (
@@ -65,7 +64,7 @@ class Bookshelf extends Component {
           <div className="bookshelf-body" style={{textAlign:txtAlign}}>
             {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
           </div>
-          <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only"></div>
+          <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only"/>
       </div>          
     )    
   }
@@ -75,4 +74,4 @@ Bookshelf.propTypes = {
   intl: intlShape.isRequired
 };
 
-export default Dimensions()(injectIntl(Bookshelf));
+export default new Dimensions()(injectIntl(Bookshelf));
