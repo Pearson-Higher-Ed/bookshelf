@@ -9,7 +9,7 @@ export const BookshelfComponent = function ViewerComponent(paramsObj) { // eslin
 
   return (<IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}>
     <Bookshelf
-    	books={paramsObj.books}
+      books={paramsObj.books}
       onBookClick={paramsObj.onBookClick}
       storeBookDetails={paramsObj.storeBookDetails}
     />
