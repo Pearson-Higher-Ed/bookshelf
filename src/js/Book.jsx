@@ -121,14 +121,18 @@ export default class Book extends Component {
   }
 }
 
+Book.defaultProps = {
+  storeBookDetails: null
+};
+
 Book.propTypes = {
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  intl: PropTypes.object.isRequired,
   onBookClick: PropTypes.func.isRequired,
-  storeBookDetails: PropTypes.func.isRequired,
   book: PropTypes.object.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  intl: PropTypes.object.isRequired,
+  storeBookDetails: PropTypes.func
 };
