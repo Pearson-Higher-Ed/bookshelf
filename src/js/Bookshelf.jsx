@@ -1,30 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import floor from 'lodash/floor';
-import Dimensions from 'react-dimensions';
 import Book from './Book';
 
 class Bookshelf extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // reqMargin: 0,
-      checkRows: ''
-    };
-  }
-
-  componentDidMount() {
-    const componentWidth = this.props.containerWidth;
-    const bookWidth = 220;
-    const booksPerRow = floor(componentWidth / bookWidth);
-    const checkRows = this.props.books.length >= booksPerRow;
-    this.state = {
-      // reqMargin: margin,
-      checkRows
-    };
-  }
-
   renderBooks() {
     const that = this;
 
@@ -53,15 +32,9 @@ class Bookshelf extends Component {
   }
 
   render() {
-    let txtAlign;
-    if (this.state.checkRows) {
-      txtAlign = 'left';
-    } else {
-      txtAlign = 'center';
-    }
     return (
       <div id="bookshelf" role="main">
-        <div className="bookshelf-body" style={{ textAlign: txtAlign }}>
+        <div className="bookshelf-body">
           {(this.props.books.length === 0) ? Bookshelf.renderEmpty() : this.renderBooks()}
         </div>
         <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only" />
@@ -71,8 +44,7 @@ class Bookshelf extends Component {
 }
 
 Bookshelf.propTypes = {
-  books: PropTypes.array.isRequired,
-  containerWidth: PropTypes.number.isRequired
+  books: PropTypes.array.isRequired
 };
 
-export default new Dimensions()(injectIntl(Bookshelf));
+export default injectIntl(Bookshelf);
