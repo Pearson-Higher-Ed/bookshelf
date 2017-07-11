@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="book "
+>
+  <a
+    className="bookContainer"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <img
+      alt="title cover"
+      className="image"
+      src="image"
+    />
+    <p
+      className="title"
+    >
+      title
+    </p>
+  </a>
+  <a
+    aria-label="More Info"
+    className="info"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    
+  </a>
+</div>
+`;
+
+exports[`renders eT1 Book 1`] = `
+<div
+  className="book "
+>
+  <a
+    className="bookContainer"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <img
+      alt="title cover"
+      className="image"
+      src="image"
+    />
+    <p
+      className="title"
+    >
+      title
+    </p>
+  </a>
+  <a
+    aria-label="More Info"
+    className="info"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    
+  </a>
+</div>
+`;
+
+exports[`renders eT1 Book 2`] = `
+<div
+  className="book "
+>
+  <a
+    className="bookContainer"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <img
+      alt="title cover"
+      className="image"
+      src="image"
+    />
+    <p
+      className="title"
+    >
+      title
+    </p>
+  </a>
+  <a
+    aria-label="More Info"
+    className="info"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    
+  </a>
+</div>
+`;
+
+exports[`renders the Book 1`] = `
+<div
+  className="book "
+>
+  <a
+    className="bookContainer"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <img
+      alt="title cover"
+      className="image"
+      src="image"
+    />
+    <p
+      className="title"
+    >
+      title
+    </p>
+  </a>
+  <a
+    aria-label="More Info"
+    className="info"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    
+  </a>
+</div>
+`;
+
+exports[`renders the Book 2`] = `
+<div
+  className="book "
+>
+  <a
+    className="bookContainer"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    <img
+      alt="title cover"
+      className="image"
+      src="image"
+    />
+    <p
+      className="title"
+    >
+      title
+    </p>
+  </a>
+  <a
+    aria-label="More Info"
+    className="info"
+    onClick={[Function]}
+    role="link"
+    tabIndex="0"
+  >
+    
+  </a>
+</div>
+`;

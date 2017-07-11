@@ -18,7 +18,8 @@ import { injectIntl } from 'react-intl';
 import Book from './Book';
 
 class Bookshelf extends Component {
-  renderBooks() {
+
+  renderBooks = () => {
     const that = this;
     return this.props.books.map(book => (
       <Book
@@ -36,19 +37,17 @@ class Bookshelf extends Component {
       ));
   }
 
-  static renderEmpty() {
-    return (
-      <div className="empty-help" >
-        <div className="empty-message" tabIndex="0" role="article" />
-      </div>
-    );
-  }
+  renderEmpty = () => (
+    <div className="empty-help" >
+      <div className="empty-message" tabIndex="0" role="article" />
+    </div>
+  );
 
   render() {
     return (
       <div id="bookshelf" role="main">
         <div className="bookshelf-body">
-          {(this.props.books.length === 0) ? Bookshelf.renderEmpty() : this.renderBooks()}
+          {(this.props.books.length === 0) ? this.renderEmpty() : this.renderBooks()}
         </div>
         <div id="books-assert-container" role="alert" aria-live="assertive" className="reader-only" />
       </div>

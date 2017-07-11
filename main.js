@@ -36,7 +36,7 @@ export default class BookshelfDemo {
   }
 }
 
-export { BookshelfComponent } from './src/js/BookshelfComponent';
+export BookshelfComponent from './src/js/BookshelfComponent';
 
 // Listen for client events to initialize a new Bookshelf component
 document.body.addEventListener('o.InitBookshelf', e => new BookshelfDemo(e.detail));
