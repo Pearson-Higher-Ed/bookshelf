@@ -12,22 +12,27 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
  * from Pearson Education, Inc.
 **/
 
+/* eslint-disable */
+
 import React from 'react';
-import { IntlProvider } from 'react-intl';
+import renderer from 'react-test-renderer';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import { InternationalSupport } from '@pearson-incubator/aquila-js-core';
-import Bookshelf from './Bookshelf';
-import msgObject from '../../translations';
+import msgObject from '../translations';
+import BookshelfComponent from '../src/js/BookshelfComponent';
+import data from '../demo/data/BookshelfData.json';
 
-const BookshelfComponent = function ViewerComponent(paramsObj) { // eslint-disable-line import/prefer-default-export
-  const intlObj = new InternationalSupport(msgObject, paramsObj.locale);
+injectTapEventPlugin();
+const intlObj = new InternationalSupport(msgObject, 'en');
 
-  return (<IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}>
-    <Bookshelf
-      books={paramsObj.books}
-      onBookClick={paramsObj.onBookClick}
-      storeBookDetails={paramsObj.storeBookDetails}
-    />
-  </IntlProvider>);
-};
+it('renders correctly', () => {
+  const tree = renderer
+    .create(<MuiThemeProvider><BookshelfComponent onBookClick={function(){}} locale={intlObj.getLocale()} books={data}/></MuiThemeProvider>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
-export default BookshelfComponent;
+
+
+

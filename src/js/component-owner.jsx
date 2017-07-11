@@ -20,7 +20,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { darkBlack, fullBlack } from 'material-ui/styles/colors';
 
-import { BookshelfComponent } from './BookshelfComponent';
+import BookshelfComponent from './BookshelfComponent';
 
 const muiTheme = getMuiTheme({
   palette: {
