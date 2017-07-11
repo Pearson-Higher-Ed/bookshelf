@@ -59,20 +59,6 @@ const BookCompeT1 = injectIntl(({date, intl}) => (
         />
 ));
 
-/*const BookCompWithoutBookClk = injectIntl(({date, intl}) => (
-    <Book key='123'
-        intl={intl}
-        id='123'
-        author='author'
-        title='title'
-        image='image'
-        description='description'
-        storeBookDetails={function(){}}
-        book={bookData}
-        />
-));*/
-
-
 it('renders correctly', () => {
   const tree = renderer
     .create(<MuiThemeProvider><IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}><BookComp /></IntlProvider></MuiThemeProvider>)
@@ -100,14 +86,4 @@ it('renders eT1 Book', () => {
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-/*it('renders without book click', () => {
-    const component = renderer.create(<MuiThemeProvider><IntlProvider locale={intlObj.getLocale()} messages={intlObj.getMessages()}><BookCompWithoutBookClk /></IntlProvider></MuiThemeProvider>);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-  tree.children[0].props.onClick({preventDefault(){}});
-  // re-rendering
-  tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});*/
 
