@@ -1,6 +1,6 @@
 {
   "name": "@pearson-incubator/bookshelf",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "",
   "main": "./main.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "src/js/component-owner.jsx"
     ],
     "setupFiles": [
@@ -41,9 +41,7 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      
-    ],
+    "transformIgnorePatterns": [],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     }
