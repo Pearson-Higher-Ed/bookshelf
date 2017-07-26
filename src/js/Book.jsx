@@ -35,8 +35,8 @@ export default class Book extends Component {
       e.preventDefault();
     }
     if (this.props.onBookClick) {
-      if (this.props.book.iseT1) {
-        this.props.onBookClick(this.props.id, this.props.book.iseT1);
+      if (this.props.book.type) {
+        this.props.onBookClick(this.props.id, this.props.book.type);
         this.props.storeBookDetails(this.props.book);
       } else {
         this.props.onBookClick(this.props.id);
