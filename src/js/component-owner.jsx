@@ -10,7 +10,7 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
  * Dissemination of this information, reproduction of this material, and copying or distribution of this software
  * is strictly forbidden unless prior written permission is obtained
  * from Pearson Education, Inc.
-**/
+* */
 
 import React from 'react';
 import PropTypes from 'prop-types';
