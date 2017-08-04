@@ -1,4 +1,8 @@
 {
   "title": "Boekenplank",
-  "emptyMessage": "Uw boekenplank is leeg."
+  "emptyMessage": "Uw boekenplank is leeg.",
+  "moreInfo": "Meer info Opent in een overlay",
+  "moreInfoCloseIcon": "Meer info Sluiten Pictogram",
+  "publicationInfo": "Publicatie informatie",
+  "courseInfo": "Cursusinformatie"
 }

@@ -1,7 +1,7 @@
 {
   "title": "Viewer",
   "emptyMessage": "Your viewer is empty.",
-  "moreInfo": "More Info",
+  "moreInfo": "More Info Opens in an overlay",
   "moreInfoCloseIcon": "More Info Close Icon",
   "publicationInfo": "Publication Information",
   "courseInfo": "Course Information"
