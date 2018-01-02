@@ -68,7 +68,7 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
   }
   a.info {
     position: absolute;
-    bottom: 56px;
+    bottom: 64px;
     right: 16px;
     background-image: url(./img/ic-info.svg);
     background-size: 18px 18px;
@@ -148,6 +148,7 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
       font-weight: normal;
       letter-spacing: -0.1px;
       color: #252525;
+      position: relative;
     }
     .course-info {
       margin-top: 32px;

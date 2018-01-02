@@ -88,16 +88,27 @@ export default class Book extends Component {
         <a
           className="bookContainer"
           onClick={this.handleBookClick}
+          onKeyPress={this.handleBookClick}
           role="link"
           tabIndex="0"
         >
           {this.renderImage(bookCoverExists)}
-          <p className="title">{this.props.title}</p>
+          <div
+            className="title"
+            onClick={this.handleBookClick}
+            onKeyPress={this.handleBookClick}
+            aria-label={this.props.title}
+            role="link"
+            tabIndex="0"
+          >
+            {this.props.title}
+          </div>
         </a>
         <a
           className="info"
           role="link"
           onClick={this.handleModalOpen}
+          onKeyPress={this.handleModalOpen}
           tabIndex="0"
           aria-label={formatMessage(messages.moreInfo)}
         >{''}</a>
