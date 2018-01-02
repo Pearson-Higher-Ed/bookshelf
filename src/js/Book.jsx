@@ -50,7 +50,9 @@ export default class Book extends Component {
     if (e && e.preventDefault) {
       e.preventDefault();
     }
-    this.setState({ modalOpen: true });
+    if (e.key === 'Enter' || e.type === 'click') {
+      this.setState({ modalOpen: true });
+    }
   }
 
   handleModalClose(e) {
@@ -95,8 +97,6 @@ export default class Book extends Component {
           {this.renderImage(bookCoverExists)}
           <div
             className="title"
-            onClick={this.handleBookClick}
-            onKeyPress={this.handleBookClick}
             aria-label={this.props.title}
             role="link"
             tabIndex="0"
