@@ -31,23 +31,20 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
 }
 .book {
   display: inline-table;
-  width: 220px;
-  height: 320px;
   background-color: #fff;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.33);
   padding: 0px;
   text-align: center;
   margin: 0px 15px 25px 15px;
   position: relative;
-  a {
-    text-decoration: none !important;
-  }
-  a.bookContainer {
-    display: block;    
+  .bookContainer {
+    width: 220px;
+    height: 320px;
+    border:none;
     height: inherit;
     &:hover .image {
       opacity: 0.7;
-    }    
+    }
     .image {
       max-width: 170px;
       height: 200px;
@@ -55,21 +52,24 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
       margin-top: 20px;
     }
     .title {
-      margin: 17px 35px 0px 16px;
+      margin: 17px 30px 18px 16px;
       text-align: left;   
       color: #252525;
+      display:block;
       font-family: "Open Sans";
       font-size: 14px;
       letter-spacing: -0.2px;
       font-weight: 400;
-      height: 60px;
+      height: 58px;
       overflow-y: hidden;
-    }    
+    }
   }
-  a.info {
+  .info {
     position: absolute;
-    bottom: 56px;
+    bottom: 58px;
     right: 16px;
+    border:none;
+    background-color: transparent;
     background-image: url(./img/ic-info.svg);
     background-size: 18px 18px;
     background-position: center;
@@ -112,6 +112,7 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
     background-size: 18px 18.7px;
     background-position: center;
     background-repeat: no-repeat;
+    border:none;
   }
   
   .image-container {
@@ -148,6 +149,7 @@ PEARSON PROPRIETARY AND CONFIDENTIAL INFORMATION SUBJECT TO NDA
       font-weight: normal;
       letter-spacing: -0.1px;
       color: #252525;
+      position: relative;
     }
     .course-info {
       margin-top: 32px;
