@@ -50,9 +50,7 @@ export default class Book extends Component {
     if (e && e.preventDefault) {
       e.preventDefault();
     }
-    if (e.key === 'Enter' || e.type === 'click') {
-      this.setState({ modalOpen: true });
-    }
+    this.setState({ modalOpen: true });
   }
 
   handleModalClose(e) {
@@ -87,31 +85,18 @@ export default class Book extends Component {
 
     return (
       <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
-        <a
+        <button
           className="bookContainer"
           onClick={this.handleBookClick}
-          onKeyPress={this.handleBookClick}
-          role="link"
-          tabIndex="0"
         >
           {this.renderImage(bookCoverExists)}
-          <div
-            className="title"
-            aria-label={this.props.title}
-            role="link"
-            tabIndex="0"
-          >
-            {this.props.title}
-          </div>
-        </a>
-        <a
+          <span className="title">{this.props.title}</span>
+        </button>
+        <button
           className="info"
-          role="link"
           onClick={this.handleModalOpen}
-          onKeyPress={this.handleModalOpen}
-          tabIndex="0"
           aria-label={formatMessage(messages.moreInfo)}
-        >{''}</a>
+        >{''}</button>
         <Dialog
           modal={false}
           open={this.state.modalOpen}
@@ -120,9 +105,8 @@ export default class Book extends Component {
           contentStyle={style.modal}
           bodyStyle={style.modal.bodyStyle}
         >
-          <div
+          <button
             className="cancelBtn"
-            role="presentation"
             onClick={this.handleModalClose}
             aria-label={formatMessage(messages.moreInfoCloseIcon)}
           />
