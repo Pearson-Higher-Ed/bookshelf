@@ -86,6 +86,7 @@ export default class Book extends Component {
     return (
       <div className={`book ${bookCoverExists ? '' : 'no-book-cover'}`}>
         <button
+          type="button"
           className="bookContainer"
           onClick={this.handleBookClick}
         >
@@ -93,6 +94,7 @@ export default class Book extends Component {
           <span className="title">{this.props.title}</span>
         </button>
         <button
+          type="button"
           className="info"
           onClick={this.handleModalOpen}
           aria-label={formatMessage(messages.moreInfo)}
@@ -106,6 +108,7 @@ export default class Book extends Component {
           bodyStyle={style.modal.bodyStyle}
         >
           <button
+            type="button"
             className="cancelBtn"
             onClick={this.handleModalClose}
             aria-label={formatMessage(messages.moreInfoCloseIcon)}
