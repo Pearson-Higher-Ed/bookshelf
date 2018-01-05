@@ -107,8 +107,7 @@ export default class Book extends Component {
           contentStyle={style.modal}
           bodyStyle={style.modal.bodyStyle}
         >
-          <button
-            type="button"
+          <a
             className="cancelBtn"
             onClick={this.handleModalClose}
             aria-label={formatMessage(messages.moreInfoCloseIcon)}
