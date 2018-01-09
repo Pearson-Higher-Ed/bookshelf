@@ -1,6 +1,6 @@
 {
   "name": "@pearson-incubator/bookshelf",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "",
   "main": "./main.js",
   "scripts": {
