@@ -1,6 +1,6 @@
 {
   "name": "@pearson-incubator/bookshelf",
-  "version": "0.1.38",
+  "version": "0.1.39",
   "description": "",
   "main": "./main.js",
   "scripts": {
@@ -53,12 +53,12 @@
     "url": "https://github.com/Pearson-Higher-Ed/"
   },
   "dependencies": {
-    "@pearson-incubator/aquila-js-core": "^0.2.32",
     "react-intl": "^2.3.0",
     "react-test-renderer": "^15.5.4"
   },
   "devDependencies": {
     "@pearson-components/npm-scripts": "^0.1.0",
+    "@pearson-incubator/aquila-js-core": "^0.3.4",
     "babel-core": "~6.3.17",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
@@ -109,6 +109,7 @@
     "webpack-dev-server": "~1.14.0"
   },
   "peerDependencies": {
+    "@pearson-incubator/aquila-js-core": "^0.3.4",
     "material-ui": "^0.16.7",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
