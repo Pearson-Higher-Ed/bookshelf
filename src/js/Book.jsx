@@ -39,7 +39,7 @@ export default class Book extends Component {
         this.props.onBookClick(this.props.id, this.props.book.type);
         this.props.storeBookDetails(this.props.book);
       } else {
-        this.props.onBookClick(this.props.id);
+        this.props.onBookClick(this.props.book);
       }
     } else {
       window.location.href = `book.html?bookId=${this.props.id}`;
